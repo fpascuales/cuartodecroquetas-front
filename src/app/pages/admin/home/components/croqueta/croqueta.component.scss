@@ -1,0 +1,13 @@
+.b-croqueta-list{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+}
+.b-croqueta{
+    display: flex;
+    align-items: center;
+    &__image{
+        width: 100px;
+    }
+}

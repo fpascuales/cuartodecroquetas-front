@@ -1,0 +1,13 @@
+<div
+    *ngIf="lastOrder"
+    class="b-payment"
+>
+    <div class="b-payment-resume">
+        <p class="b-payment-resume__message">GRACIAS POR REALIZAR TU COMPRA. NO TE OLVIDES TU TICKET PARA RECOGER TUS CROQUETAS EN EL MOSTRADOR</p>
+        <p>PEDIDO: {{ lastOrder.num}}</p>
+        <p>IMPORTE: {{ lastOrder.total }} €</p>
+        <p>FECHA: {{ lastOrder.date }}</p>
+        <p>HORA: {{ lastOrder.time }}</p>
+        <p *ngIf="countdown > 0">{{ countdown }} {{ countdown === 1 ? 'segundo' : 'segundos' }}</p>
+    </div>
+</div>

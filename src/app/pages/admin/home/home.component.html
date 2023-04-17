@@ -1,0 +1,21 @@
+<div class="b-home">
+    <div
+        *ngIf="croquetas"
+        class="b-home__detail"
+    >
+        <app-croqueta
+            *ngFor="let croqueta of croquetas"
+            [croqueta]="croqueta"
+        ></app-croqueta>
+    </div>
+
+    <div
+        *ngIf="orders"
+        class="b-home__detail"
+    >
+        <app-order
+            *ngFor="let order of orders"
+            [order]="order"
+        ></app-order>
+    </div>
+</div>

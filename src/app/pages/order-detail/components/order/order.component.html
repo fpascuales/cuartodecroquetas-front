@@ -1,0 +1,14 @@
+<div
+    *ngIf="order"
+    class="b-croqueta"
+>
+    <img
+    class="b-croqueta__image"
+    [src]="order.croqueta.image"
+    >
+    <p>{{ order.croqueta.name }}</p>
+    <p>{{ order.croqueta.price }} €</p>
+    <p>{{ order.quantity }} Ud.</p>
+    <p>{{ order.subtotal }} €</p>
+</div>
+

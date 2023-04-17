@@ -1,0 +1,36 @@
+<div
+    *ngIf="orders"
+    class="b-order-detail"
+>
+    <div class="b-order-list">
+        <div class="b-order-list__info">
+            <p>DETALLES DEL PEDIDO</p>
+            <div class="b-order-list__info">
+                <p>FECHA: {{ date }}</p>
+                <p></p>
+                <p class="b-order-list__info__time">HORA: {{ time }}</p>
+            </div>
+        </div>
+        <app-order
+            *ngFor="let order of orders"
+            [order]="order"
+        ></app-order>
+    </div>
+</div>
+<div 
+    *ngIf="orders"
+    class="b-croqueta-resume">
+    <div class="b-croqueta-resume__section">
+        <button
+        (click)="navigateToHome()"
+        class="b-croqueta-resume__section b-croqueta-resume__section__btn"
+        >CANCELAR</button>
+    </div>
+    <div class="b-croqueta-resume__section b-croqueta-resume__section__total"><p>TOTAL:</p> <p>{{ totalOrder() }} €</p></div>
+    <div class="b-croqueta-resume__section">
+        <button
+            (click)="navigateToPayment(orders)"
+            class="b-croqueta-resume__section b-croqueta-resume__section__btn"
+        >PAGAR</button>
+    </div>
+</div>

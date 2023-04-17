@@ -1,0 +1,24 @@
+<div
+    *ngIf="croquetas"
+    class="b-croqueta-list"
+>
+
+    <app-croqueta
+        class="b-croqueta-list__croqueta"
+        *ngFor="let croqueta of croquetas"
+        [croqueta]="croqueta"
+        (onAddToOrder)="addToOrder($event)"
+    ></app-croqueta>
+</div>
+<div 
+    *ngIf="croquetas"
+    class="b-croqueta-resume">
+    <div class="b-croqueta-resume__section"></div>
+    <div class="b-croqueta-resume__section b-croqueta-resume__section__total"><p>TOTAL:</p> <p>{{ totalOrder() }} €</p></div>
+    <div class="b-croqueta-resume__section">
+        <button
+            (click)="navigateToOrderDetail(order)"
+            class="b-croqueta-resume__section b-croqueta-resume__section__btn"
+        >SIGUIENTE</button>
+    </div>
+</div>

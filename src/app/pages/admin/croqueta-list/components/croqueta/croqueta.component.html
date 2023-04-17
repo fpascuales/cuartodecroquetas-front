@@ -1,0 +1,18 @@
+<div
+    *ngIf="croqueta"
+    class="b-croqueta"
+>
+    <img
+    class="b-croqueta__image"
+    [src]="croqueta.image"
+    >
+    <p class="b-croqueta__text">{{ croqueta.name }}</p>
+    <p class="b-croqueta__text">{{ croqueta.price }}</p>
+    <button
+        class=""
+        (click)="navigateToDetail(croqueta._id)"
+    >DETALLE</button>
+    <button
+        (click)="removeCroqueta()"
+    >ELIMINAR</button>
+</div>

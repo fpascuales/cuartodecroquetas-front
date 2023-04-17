@@ -1,0 +1,86 @@
+.b-croqueta{
+    position: relative;
+    width: 330px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    border-radius: 20px;
+    box-shadow: 3px 3px 5px 3px var(--color-shadow);
+    &__icon-info{
+        position: absolute;
+        right: 20px;
+        font-size: 40px;
+        color: var(--color-info);
+        cursor: pointer;
+        transition: transform .25s ease-in-out;
+        &:hover{
+            transform: scale(1.5);
+        }
+    }
+    &__image{
+        width: 100%;
+        border-bottom: solid 2px var(--color-add);
+    }
+    &__info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &__name{
+        font-family: JosefinSans-Medium;
+        font-size: 25px;
+        margin-bottom: 0;
+    }
+    &__units-price{
+        font-family: JosefinSans-Regular;
+        font-size: 20px;
+        width: 250px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__quantity{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &__btn{
+            font-family: JosefinSans-SemiBold;
+            font-size: 50px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        &__input{
+            width: 80px;
+            height: 30px;
+            font-family: JosefinSans-SemiBold;
+            font-size: 30px;
+            text-align: center;
+            margin: 0 20px;
+            border-radius: 5px;
+            -moz-appearance: textfield;
+            appearance: textfield;
+            &::-webkit-inner-spin-button, ::-webkit-outer-spin-button{
+                -webkit-appearance: none;
+                margin: 0;
+            }
+        }
+    }
+    &__btn-add{
+        width: 100%;
+        height: 60px;
+        font-family: JosefinSans-SemiBold;
+        font-size: 30px;
+        color: var(--color);
+        background-color: var(--color-add);
+        border: none;
+        border-radius: 0 0 20px 20px;
+        cursor: pointer;
+        transition: background-color .25s ease-in-out;
+        &:hover{
+            background-color: var(--color-info);
+        }
+    }
+}

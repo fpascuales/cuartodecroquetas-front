@@ -1,0 +1,14 @@
+.b-croqueta{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    &__image{
+        width: 100px;
+    }
+    &__text{
+        font-family: JosefinSans-Medium;
+        font-size: 18px;
+        margin-bottom: 0;
+    }
+}

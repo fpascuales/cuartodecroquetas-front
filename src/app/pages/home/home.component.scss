@@ -1,0 +1,76 @@
+.b-croqueta-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 80px 0;
+    &__croqueta{
+        margin: 20px;
+    }
+}
+.b-croqueta-resume{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+    &__section{
+        width: 33%;
+        display: flex;
+        justify-content: center;
+        font-family: JosefinSans-SemiBold;
+        color: var(--color);
+        &__total{
+            justify-content: space-evenly;
+            font-size: 45px;
+            background-color: var(--color-add);
+            border-radius: 20px;
+            box-shadow: 3px 3px 5px 3px var(--color-shadow);
+        }
+        &__btn{
+            align-items: center;
+            width: 200px;
+            height: 80px;
+            font-size: 25px;
+            background-color: var(--color-add);
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color .25s ease-in-out;
+            &:hover{
+                background-color: var(--color-info);
+            }
+        }   
+    }
+}
+@media only screen and (max-width: 600px) {
+    .b-croqueta-resume{
+        display: flex;
+        flex-direction: column;
+        &__section{
+            width: 90%;
+            &__total{
+                justify-content: space-evenly;
+                font-size: 35px;
+                margin: 20px 0;
+                background-color: var(--color-add);
+                border-radius: 20px;
+                box-shadow: 3px 3px 5px 3px var(--color-shadow);
+            }
+            &__btn{
+                align-items: center;
+                width: 200px;
+                height: 80px;
+                font-size: 25px;
+                background-color: var(--color-add);
+                border: none;
+                border-radius: 20px;
+                cursor: pointer;
+                transition: background-color .25s ease-in-out;
+                &:hover{
+                    background-color: var(--color-info);
+                }
+            }   
+        }
+    }  
+}

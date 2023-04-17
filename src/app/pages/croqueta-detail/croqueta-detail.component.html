@@ -1,0 +1,40 @@
+<div
+    *ngIf="croqueta"
+    class="b-croqueta"
+>
+    <div class="b-croqueta-info">
+        <div class="b-croqueta-info__sup">
+            <div>
+                <img
+                    class="b-croqueta-info__image"
+                    [src]="croqueta.image"
+                    [alt]="croqueta.name"
+                >
+            </div>
+            <div class="b-croqueta-info__sup__right">
+                <p class="b-croqueta-info__name">Croqueta de {{ croqueta.name }}</p>
+                <p>{{ croqueta.description }}</p>
+                <div class="b-croqueta-info__units-price">
+                    <p>Unidades: {{ croqueta.units}}</p>
+                    <p>Precio: {{ croqueta.price }} €</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <p>Información de alérgenos:</p>
+            <div class="b-croqueta-info__allergens">
+                <div
+                *ngFor="let allergen of croqueta.allergens"
+                class="b-croqueta-info__allergens__type"
+                >
+                    <p class="b-croqueta-info__allergen-icon b-croqueta-info__allergen-icon__{{replaceSpaceAllergen(allergen.type)}}"></p>
+                    <p>{{allergen.type}}</p>
+                </div>
+            </div>
+        </div>
+        <button
+            [routerLink]="['/']"
+            class="b-croqueta-info__btn-back"
+        >VOLVER</button>
+    </div> 
+</div>

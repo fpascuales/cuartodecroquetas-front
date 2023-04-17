@@ -1,0 +1,14 @@
+<div class="b-header">
+    <img class="e-logo" src="../../../../assets/images/cuarto-de-croquetas-logo-white.png" alt="Cuarto de Croquetas">
+    <div
+        *ngIf="isLogged"
+    >
+        <button
+            (click)="navigateToCroquetasList()"
+        >CROQUETAS</button>
+        <button
+            (click)="navigateToOrderList()"
+        >PEDIDOS</button>
+        <button>CERRAR SESIÓN</button>
+    </div>
+</div>

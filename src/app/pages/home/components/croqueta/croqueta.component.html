@@ -1,0 +1,42 @@
+<div
+    *ngIf="croqueta"
+    class="b-croqueta"
+>
+    <div>
+        <span
+            class="b-croqueta__icon-info icon-info"
+            (click)="navigateToDetail(croqueta._id)"
+        ></span>
+        <img
+        class="b-croqueta__image"
+        [src]="croqueta.image"
+        >
+    </div>
+    
+    <div class="b-croqueta__info">
+        <p class="b-croqueta__name">{{ croqueta.name }}</p>
+        <div class="b-croqueta__units-price">
+            <p>Unidades: {{ croqueta.units}}</p>
+            <p>Precio: {{ croqueta.price }} €</p>
+        </div>
+    </div>
+    <div class="b-croqueta__quantity">
+        <button
+            class="b-croqueta__quantity__btn"
+            (click)="dropOneOnClick()"
+        >-</button>
+        <input
+            type="number"
+            [(ngModel)]="quantity"
+            class="b-croqueta__quantity__input"
+        >
+        <button
+            class="b-croqueta__quantity__btn"
+            (click)="addOneOnClick()"
+        >+</button>
+    </div>
+    <button
+        class="b-croqueta__btn-add"
+        (click)="addToOrder()"
+    >AÑADIR</button>
+</div>

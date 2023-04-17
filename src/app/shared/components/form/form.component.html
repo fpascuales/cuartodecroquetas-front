@@ -1,0 +1,96 @@
+<div class="b-croqueta">
+    <form *ngIf="croquetaForm" [formGroup]="croquetaForm" (submit)="handleCroqueta()">
+        <div class="b-croqueta-info">
+            <div class="b-croqueta-info__sup">
+                <div>
+                    <img class="b-croqueta-info__image" [src]="imgSrc" [alt]="">
+                </div>
+                <div class="b-croqueta-info__sup__right">
+                    <p class="b-croqueta-info__text">Croqueta</p>
+                    <input class="b-croqueta-info__input100" placeholder="Nombre" formControlName="name">
+                    <textarea class="b-croqueta-info__input100 b-croqueta-info__textarea" rows="10"
+                        placeholder="Descripción" formControlName="description"></textarea>
+                    <div class="b-croqueta-info__units-price">
+                        <div class="b-croqueta-info__sup">
+                            <p class="b-croqueta-info__text">Unidades</p>
+                            <input class="b-croqueta-info__input25" formControlName="units">
+                        </div>
+                        <div class="b-croqueta-info__sup">
+                            <p class="b-croqueta-info__price">Precio</p>
+                            <input class="b-croqueta-info__input25" formControlName="price">
+                        </div>
+                    </div>
+                    <div class="b-croqueta-info__sup">
+                        <p class="b-croqueta-info__text">Imagen</p>
+                        <input type="text"
+                        formControlName="image">
+                        <!-- <input
+                            type="file"
+                            (change)="onFileChange(event)"
+                        > -->
+                        <!-- meter el ngIf de src para que salga la imagen -->
+                    </div>
+                    <div class="b-croqueta-info__category">
+                        <p class="b-croqueta-info__text">Categoría</p>
+                        <select formControlName="category">
+                            <option
+                                *ngFor="let category of categoryOptions"
+                                [value]="category"
+                                class="b-croqueta-info__text"
+                            >{{ category }}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p class="b-croqueta-info__text">Información de alérgenos:</p>
+                <div class="b-croqueta-info__allergens">
+                    <div class="b-croqueta-info__allergens__type" *ngFor="let allergen of allergensType">
+                        <input type="checkbox" [value]="allergen" formControlName="allergens" (change)="updateAllergen($event)">
+                        {{ allergen }}
+                    </div>
+                </div>
+            </div>
+            <div class="b-croqueta-btn">
+                <button
+                class="b-croqueta-info__btn"
+                (click)="navigateToCroquetaList()"
+                >VOLVER</button>
+                <button class="b-croqueta-info__btn b-croqueta-info__btn__delete">ELIMINAR</button>
+                <button type="submit" class="b-croqueta-info__btn">{{ isEditMode ? 'EDITAR' : 'CREAR' }}</button>
+            </div>
+        </div>
+        <div *ngIf="
+                    !croquetaForm.get('name')?.valid
+                    && croquetaForm.get('name')?.touched
+                ">
+            <p class="control control__error">El campo NOMBRE está requerido</p>
+        </div>
+        <div *ngIf="
+                    !croquetaForm.get('description')?.valid
+                    && croquetaForm.get('description')?.touched
+                ">
+            <p class="control control__error">El campo DESCRIPCIÓN está requerido</p>
+        </div>
+        <div *ngIf="
+                    !croquetaForm.get('units')?.valid
+                    && croquetaForm.get('units')?.touched
+                " class="control control__error">
+            <p *ngIf="croquetaForm.get('units')?.errors?.['required']">El campo UNIDADES está requerido</p>
+            <p *ngIf="croquetaForm.get('units')?.errors?.['negativePrice']">No se pueden introducir UNIDADES negativas</p>
+            <p *ngIf="croquetaForm.get('price')?.errors?.['pattern']">Solo se admiten números</p>
+        </div>
+        <div *ngIf="
+                    !croquetaForm.get('price')?.valid
+                    && croquetaForm.get('price')?.touched
+                " class="control control__error">
+            <p *ngIf="croquetaForm.get('price')?.errors?.['required']">El campo PRECIO está requerido</p>
+            <p *ngIf="croquetaForm.get('price')?.errors?.['negativePrice']">No se pueden introducir PRECIOS negativos</p>
+            <p *ngIf="croquetaForm.get('price')?.errors?.['pattern']">Solo se admiten números</p>
+        </div>
+        <div *ngIf="hasFormError" class="control control__error">Hay errores en el formulario, revisalo</div>
+        <div *ngIf="hasSuccess" class="control control__success">
+            <p>Éxito creando el producto</p>
+        </div>
+    </form>
+</div>

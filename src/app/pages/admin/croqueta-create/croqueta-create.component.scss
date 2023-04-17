@@ -1,0 +1,95 @@
+.b-croqueta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+}
+.b-croqueta-info{
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    font-family: JosefinSans-Regular;
+    font-size: 18px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 3px 3px 5px 3px var(--color-shadow);
+    &__sup{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    &__image{
+        width: 350px;
+    }
+    &__text{
+        margin: 5px 0;
+    }
+    &__price{
+        margin: 5px 0px 5px 30px;
+    }
+    &__input100{
+        width: 98%;
+        font-size: 16px;
+    }
+    &__input25{
+        width: 30%;
+        font-size: 16px;
+    }
+    &__textarea{
+        resize: none;
+        font-size: 16px;
+    }
+    &__sup__right{
+        width: 350px;
+    }
+    &__units-price{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__allergens{
+        display: flex;
+        flex-wrap: wrap;
+        &__type{
+            display: flex;
+            align-items: center;
+            margin: 10px;
+        }
+    }
+    &__btn{
+        font-family: JosefinSans-SemiBold;
+        font-size: 20px;     
+        color: var(--color);
+        padding: 10px;
+        background: var(--color-add);
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color .25s ease-in-out;
+        &:hover{
+            background-color: var(--color-info);
+        }
+        &__delete{
+            background-color: transparent;
+            border: 1px solid var(--color-delete);
+            color: var(--color-delete);
+            &:hover{
+                background-color: var(--color-delete);
+                color: var(--color);
+            }
+        }
+    }
+}
+.b-croqueta-btn{
+    display: flex;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 600px) {
+    .b-croqueta-info{
+        &__sup{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

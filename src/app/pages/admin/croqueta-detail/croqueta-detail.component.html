@@ -1,0 +1,61 @@
+<div
+    *ngIf="croqueta"
+    class="b-croqueta"
+>
+    <div class="b-croqueta-info">
+        <div class="b-croqueta-info__sup">
+            <div>
+                <img
+                    class="b-croqueta-info__image"
+                    [src]="croqueta.image"
+                    [alt]="croqueta.name"
+                >
+            </div>
+            <div class="b-croqueta-info__sup__right">
+                <p class="b-croqueta-info__text">Croqueta</p>
+                <input class="b-croqueta-info__input100" type="text" placeholder="{{ croqueta.name }}" disabled>
+                <textarea class="b-croqueta-info__input100 b-croqueta-info__textarea" rows="10" disabled>{{ croqueta.description }}</textarea>
+                <div class="b-croqueta-info__units-price">
+                    <div class="b-croqueta-info__sup">
+                        <p class="b-croqueta-info__text">Unidades</p>
+                        <input class="b-croqueta-info__input25" type="text" placeholder="{{ croqueta.units}}" disabled>
+                    </div>
+                    <div class="b-croqueta-info__sup">
+                        <p class="b-croqueta-info__price">Precio</p>
+                        <input class="b-croqueta-info__input25" type="text" placeholder="{{ croqueta.price}}" disabled>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+        <div>
+            <p class="b-croqueta-info__text">Información de alérgenos:</p>
+            <div class="b-croqueta-info__allergens">
+                <div class="b-croqueta-info__allergens__type" *ngFor="let allergen of allergensType">
+                    <ng-container *ngIf="existsInAllergensSelected(allergen); else checkbox">
+                      <input type="checkbox" checked disabled>
+                      {{ allergen }}
+                    </ng-container>
+                    <ng-template #checkbox>
+                      <input type="checkbox" disabled>
+                      {{ allergen }}
+                    </ng-template>
+                  </div>                                 
+            </div>
+        </div>
+        <div class="b-croqueta-btn">
+            <button
+            class="b-croqueta-info__btn"
+            [routerLink]="['/admin/croqueta-list']"
+            >VOLVER</button>
+            <button
+            class="b-croqueta-info__btn b-croqueta-info__btn__delete"
+            (click)="removeCroqueta(croqueta._id)"
+            >ELIMINAR</button>
+            <button
+            class="b-croqueta-info__btn"
+            (click)="navigateToEditById(croqueta._id)"
+            >EDITAR</button>
+        </div>
+
+    </div> 
+</div>

@@ -1,0 +1,13 @@
+<div
+    *ngIf="croqueta"
+    class="b-croqueta-list"
+>
+    <div class="b-croqueta">
+        <img
+            class="b-croqueta__image"
+            [src]="croqueta.image"
+        >
+        <p>{{ croqueta.name }}</p>
+        <p>{{ croqueta.quantity }}</p>
+    </div>
+</div>
