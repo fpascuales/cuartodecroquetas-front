@@ -14,4 +14,8 @@ li{
     color: var(--color);
     font-family: JosefinSans-Regular;
     background-color: var(--color-dark);
+    &__about{
+        text-decoration: none;
+        color: var(--color);
+    }
 }
