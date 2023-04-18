@@ -32,13 +32,4 @@ export class HeaderComponent{
   public logout() {
     this.authService.logout();
   }
-  // public ngOnInit(): void {
-  //   this.isLogged = this.authService.isLogged()    
-  // }
-  // public navigateToCroquetasList(){
-  //   this.router.navigate(['admin/croqueta-list'])
-  // }
-  // public navigateToOrderList(){
-  //   this.router.navigate(['admin/order-list'])
-  // }
 }

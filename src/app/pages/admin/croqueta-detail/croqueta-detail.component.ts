@@ -51,12 +51,8 @@ export class CroquetaDetailComponent {
     );
   }
   public removeCroqueta(id: string) {
-    this.croquetaService.deleteCroqueta(id).subscribe(() => {
-        console.log(`Croqueta con id ${id} eliminada correctamente`);
-      },
-      (error) => {
-        console.log(`Error al eliminar la croqueta con id ${id}: ${error}`);
-      }
+    this.croquetaService.deleteCroqueta(id).subscribe(() => {},
+      (error) => { return error; }
     );
     this.hasSuccess = true;
     this.router.navigate(['admin/croqueta-list'])

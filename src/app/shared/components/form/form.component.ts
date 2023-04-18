@@ -94,12 +94,12 @@ export class FormComponent implements OnInit {
     this.croquetaService.createCroqueta(this.croquetaForm?.value)
     .subscribe(
       response => {
-        console.log('Croqueta creada exitosamente', response);
         this.hasSuccess = true;
+        return response;
       },
       error => {
-        console.error('Error al crear croqueta', error);
         this.hasFormError = false
+        return error;
       }
     )
   }

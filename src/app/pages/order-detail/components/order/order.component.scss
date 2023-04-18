@@ -1,9 +1,26 @@
 .b-croqueta{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 20px;
     &__image{
         width: 100px;
+    }
+    &__info{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 40%;
+        &--one{
+            justify-content: space-between;
+        }
+    }
+}
+@media only screen and (max-width: 600px) {
+    .b-croqueta{
+        padding: 10px 5px;
+        &__image{
+            width: 80px;
+        }
     }
 }

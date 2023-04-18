@@ -49,6 +49,7 @@
             font-family: JosefinSans-SemiBold;
             font-size: 50px;
             background: none;
+            outline: none;
             border: none;
             cursor: pointer;
         }
@@ -60,6 +61,7 @@
             text-align: center;
             margin: 0 20px;
             border-radius: 5px;
+            outline: none;
             -moz-appearance: textfield;
             appearance: textfield;
             &::-webkit-inner-spin-button, ::-webkit-outer-spin-button{
@@ -75,6 +77,7 @@
         font-size: 30px;
         color: var(--color);
         background-color: var(--color-add);
+        outline: none;
         border: none;
         border-radius: 0 0 20px 20px;
         cursor: pointer;

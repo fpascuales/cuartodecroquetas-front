@@ -1,0 +1,38 @@
+.b-order{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px 20px;
+    &__info{
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 80%;
+        margin: 0 15px;
+    }
+    &__btn{
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 30px;
+        font-family: JosefinSans-Light;
+        font-size: 14px;
+        &--detail{
+            color: var(--color);
+            border: none;
+            background-color: var(--color-dark);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color .25s ease-in-out;
+            &:hover{
+                background-color: var(--color-light);
+            }
+            &:focus{
+                outline: none;
+            }
+        }
+    }
+}
+.icon{
+    margin-right: 5px;
+}

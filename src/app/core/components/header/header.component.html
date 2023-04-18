@@ -2,24 +2,17 @@
     <img class="e-logo" src="https://res.cloudinary.com/dgkm71mjf/image/upload/v1680371227/cuarto_de_croquetas/cuarto-de-croquetas-logo-white_mmuzqp.png" alt="Cuarto de Croquetas">
     <div
         *ngIf="isLogged"
+        class="b-nav"
     >
         <a
             *ngFor="let link of headerLinksElements"
             [routerLink]="[link.url]"
-            class="link"
-            routerLinkActive="link--active"
+            class="b-nav__link"
+            routerLinkActive="b-nav__link--active"
         >{{ link.content }}</a>
         <button
-            class=""
+            class="b-nav__btn"
             (click)="logout()"
-        >CERRAR SESIÓN</button> 
-    
-    <!-- <button
-            (click)="navigateToCroquetasList()"
-        >CROQUETAS</button>
-        <button
-            (click)="navigateToOrderList()"
-        >PEDIDOS</button>
-        <button>CERRAR SESIÓN</button> -->
+        ><span class="icon-exit"></span>SALIR</button> 
     </div>
 </div>

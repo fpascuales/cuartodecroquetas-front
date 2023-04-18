@@ -1,14 +1,56 @@
 .b-croqueta{
-    position: relative;
     display: flex;
     align-items: center;
-    padding-top: 20px;
+    justify-content: space-between;
+    margin: 5px 20px;
     &__image{
         width: 100px;
     }
-    &__text{
-        font-family: JosefinSans-Medium;
-        font-size: 18px;
-        margin-bottom: 0;
+    &__info{
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 70%;
+        margin: 0 15px;
     }
+    &__btn{
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 30px;
+        font-family: JosefinSans-Light;
+        font-size: 14px;
+        &--detail{
+            color: var(--color);
+            border: none;
+            background-color: var(--color-btn);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color .25s ease-in-out;
+            &:hover{
+                background-color: var(--color-light);
+            }
+            &:focus{
+                outline: none;
+            }
+        }
+        &--delete{
+            margin-left: 5px;
+            color: var(--color);
+            border: none;
+            background-color: var(--color-alert);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color .25s ease-in-out;
+            &:hover{
+                background-color: var(--color-light);
+            }
+            &:focus{
+                outline: none;
+            }
+        }        
+    }
+}
+.icon{
+    margin-right: 5px;
 }

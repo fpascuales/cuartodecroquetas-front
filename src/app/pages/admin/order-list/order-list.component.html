@@ -1,10 +1,23 @@
-<div
-    *ngIf="orders"
-    class=""
->
-    <app-order
-        class=""
-        *ngFor="let order of orders"
-        [order]="order"
-    ></app-order>
+<div class="b-order">
+    <div
+        *ngIf="orders"
+        class="b-order-list"
+    >
+        <div class="b-order-list__title">
+            <p class="b-order-list__title--text">Listado de Pedidos</p>
+        </div>
+        <div class="b-order-list__subtitle">
+            <div class="b-order-list__subtitle b-order-list__subtitle--text">
+                <p>Fecha</p>
+                <p>Pedido</p>
+                <p>Total</p>
+            </div>
+            <div class="b-order-list__subtitle--blank">
+            </div>
+        </div>
+        <app-order
+            *ngFor="let order of orders"
+            [order]="order"
+        ></app-order>
+    </div>
 </div>

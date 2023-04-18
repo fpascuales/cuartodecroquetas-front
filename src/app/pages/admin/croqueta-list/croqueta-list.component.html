@@ -1,15 +1,16 @@
-<button
-class=""
-(click)="navigateToCroquetaCreate()"
->CREAR CROQUETA</button>
-<div
-    *ngIf="croquetas"
-    class=""
->
-    <app-croqueta
-        class=""
-        *ngFor="let croqueta of croquetas"
-        [croqueta]="croqueta"
-        (onRemoveCroqueta)="removeCroqueta(croqueta._id)"
-    ></app-croqueta>
+<div class="b-croqueta">
+    <div
+        *ngIf="croquetas"
+        class="b-croquetas-list"
+    >
+    <button
+    class="b-croquetas-list__title"
+    (click)="navigateToCroquetaCreate()"
+    ><span class="icon-pencil b-croquetas-list__title--icon"></span>Crear Croqueta</button>
+        <app-croqueta
+            *ngFor="let croqueta of croquetas"
+            [croqueta]="croqueta"
+            (onRemoveCroqueta)="removeCroqueta(croqueta._id)"
+        ></app-croqueta>
+    </div>
 </div>

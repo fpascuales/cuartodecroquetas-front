@@ -97,14 +97,18 @@
         }
     }
     &__btn-back{
+        display: flex;
+        align-items: center;
+        justify-content: center;
         align-self: end;
         font-family: JosefinSans-SemiBold;
         font-size: 20px;     
         color: var(--color);
-        padding: 10px;
+        height: 50px;
+        width: 50px;
         background: var(--color-add);
         border: none;
-        border-radius: 10px;
+        border-radius: 50px;
         cursor: pointer;
         transition: background-color .25s ease-in-out;
         &:hover{
