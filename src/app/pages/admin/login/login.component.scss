@@ -1,17 +1,52 @@
 .b-login{
+    height: calc(100vh - 180px);
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;   
+}
+.b-form{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
     align-items: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     width: 300px;
     height: 400px;
+    padding: 20px;
     box-shadow: 0px 0px 5px 5px var(--color-shadow);
     border-radius: 3px 3px 3px 3px;
     -moz-border-radius: 3px 3px 3px 3px;
     -webkit-border-radius: 3px 3px 3px 3px;
     box-sizing: border-box;
+    color: var(--color-text);
+    font-family: JosefinSans-Regular;
+    &__title{
+        font-size: 45px;
+        margin: 0;
+        text-align: center;
+    }
+    &__login{
+        display: flex;
+        flex-direction: column;
+    }
+    &__input{
+        font-family: JosefinSans-Regular;
+        font-size: 16px;
+        margin: 5px 0;
+        width: 200px;
+        height: 30px;
+        border: none;
+        border-radius: 2px;
+        border-bottom: solid 1px var(--color-shadow);
+        &:hover{
+            border: none;
+            border-radius: 2px;
+            border-bottom: solid 1px var(--color-dark); 
+        }
+        &:focus{
+            outline: none;
+            border-radius: 2px;
+            border-bottom: solid 1px var(--color-dark); 
+        }
+    }
 }
