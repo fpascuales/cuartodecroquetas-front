@@ -1,21 +1,37 @@
 <div class="b-home">
-    <div
-        *ngIf="croquetas"
-        class="b-home__detail"
-    >
+    <div *ngIf="croquetas" class="b-home__detail">
+        <div class="b-home__detail--title">
+            <h3>Croquetas más vendidas</h3>
+        </div>
         <app-croqueta
-            *ngFor="let croqueta of croquetas"
-            [croqueta]="croqueta"
+        *ngFor="let croqueta of croquetas"
+        [croqueta]="croqueta"
         ></app-croqueta>
     </div>
+    <div>
+        <div *ngIf="orders" class="b-home__detail">
+            <div class="b-home__detail--title">
+                <h3>Últimos 10 pedidos</h3>
+            </div>
+            <div class="b-home__title">
+                <div class="b-home__title b-home__title--text">
+                    <p>Fecha</p>
+                    <p>Pedido</p>
+                    <p>Total</p>
+                </div>
+                <div class="b-home__title--blank">
+                </div>
+            </div>
 
-    <div
-        *ngIf="orders"
-        class="b-home__detail"
-    >
-        <app-order
+            <app-order
             *ngFor="let order of orders"
             [order]="order"
-        ></app-order>
+            ></app-order>
+        </div>
+        <div class="b-home__detail stores">
+            <div class="b-home__detail--title">
+                <h3>Ventas por locales</h3>
+            </div>
+        </div>
     </div>
 </div>

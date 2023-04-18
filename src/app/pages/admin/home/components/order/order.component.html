@@ -1,9 +1,17 @@
 <div
     *ngIf="order"
+    class="b-order"
 >
-    <div class="b-order">
-        <p>Fecha: {{ order.date }}</p>
-        <p>Pedido: {{ order.num }}</p>
-        <p>Total: {{ order.total }}</p>
+    <div class="b-order__info">
+        <p>{{ order.date }}</p>
+        <p>{{ order.num }}</p>
+        <p>{{ order.total }} €</p>
     </div>
+    <div class="b-order--btn">
+        <button
+        class="b-order__btn"
+        (click)="navigateToDetail()"
+    >VER</button>
+    </div>
+
 </div>

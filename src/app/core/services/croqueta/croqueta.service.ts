@@ -49,6 +49,7 @@ export class CroquetaService {
           return this.apiCroquetasService.getApiCroquetaById(croquetaId).pipe(
             map((croqueta) => {
               return {
+                id: croqueta._id,
                 image: croqueta.image,
                 name: croqueta.name,
                 quantity: croquetasSold[croquetaId],

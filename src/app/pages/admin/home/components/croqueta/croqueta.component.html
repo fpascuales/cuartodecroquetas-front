@@ -1,13 +1,21 @@
 <div
     *ngIf="croqueta"
-    class="b-croqueta-list"
+    class="b-croqueta"
 >
-    <div class="b-croqueta">
+    <div>
         <img
-            class="b-croqueta__image"
-            [src]="croqueta.image"
+        class="b-croqueta__image"
+        [src]="croqueta.image"
         >
-        <p>{{ croqueta.name }}</p>
-        <p>{{ croqueta.quantity }}</p>
+    </div>
+    <div class="b-croqueta__info">
+        <div class="b-croqueta__info">
+            <p>{{ croqueta.name }}</p>
+            <p>{{ croqueta.quantity }} Ud.</p>
+        </div>
+        <button
+            class="b-croqueta__btn"
+            (click)="navigateToDetail(croqueta.id)"
+        >VER</button>
     </div>
 </div>
