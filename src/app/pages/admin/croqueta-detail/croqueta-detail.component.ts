@@ -11,6 +11,7 @@ import { CroquetaAllergensI, CroquetaI } from 'src/app/core/services/croqueta/mo
 })
 export class CroquetaDetailComponent {
   public croqueta?: CroquetaI;
+  public hasSuccess: boolean = false;
   public allergensType: string[] = [
     'Gluten',
     'Crustáceos',
@@ -50,8 +51,6 @@ export class CroquetaDetailComponent {
     );
   }
   public removeCroqueta(id: string) {
-    // this.croquetasService.deleteCroqueta(id).subscribe(() => this.getCroquetas())
-    console.log(`Eliminando croqueta con id ${id}`);
     this.croquetaService.deleteCroqueta(id).subscribe(() => {
         console.log(`Croqueta con id ${id} eliminada correctamente`);
       },
@@ -59,6 +58,8 @@ export class CroquetaDetailComponent {
         console.log(`Error al eliminar la croqueta con id ${id}: ${error}`);
       }
     );
+    this.hasSuccess = true;
+    this.router.navigate(['admin/croqueta-list'])
   }
   public navigateToEditById(id: string) {
     this.router.navigate(['admin/croqueta-edit', id]);

@@ -49,9 +49,9 @@ export class AuthService {
   }
   public logout() {
     const removeToken = localStorage.removeItem(TOKEN_KEY);
-    this.isLogged$.next(false);
-    if(removeToken != null) {
-      this.router.navigate(['admin'])
+    this.isLogged$.next(false);    
+    if(removeToken === undefined) {      
+      this.router.navigate(['admin/login'])
     }
   }
 }

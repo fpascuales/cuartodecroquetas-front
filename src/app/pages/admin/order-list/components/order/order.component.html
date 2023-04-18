@@ -1,1 +1,12 @@
-<p>order works!</p>
+<div
+    *ngIf="order"
+    class=""
+>
+<p>Pedido: {{ order.num }}</p>
+<p>Fecha: {{ order.date }}</p>
+<p>Total: {{ order._id }}</p>
+<button
+    class=""
+    (click)="navigateToDetail()"
+>VER</button>
+</div>

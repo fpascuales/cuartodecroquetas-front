@@ -56,8 +56,7 @@
                 class="b-croqueta-info__btn"
                 (click)="navigateToCroquetaList()"
                 >VOLVER</button>
-                <button class="b-croqueta-info__btn b-croqueta-info__btn__delete">ELIMINAR</button>
-                <button type="submit" class="b-croqueta-info__btn">{{ isEditMode ? 'EDITAR' : 'CREAR' }}</button>
+                <button type="submit" class="b-croqueta-info__btn">{{ isEditMode ? 'GUARDAR' : 'CREAR' }}</button>
             </div>
         </div>
         <div *ngIf="
@@ -90,7 +89,7 @@
         </div>
         <div *ngIf="hasFormError" class="control control__error">Hay errores en el formulario, revisalo</div>
         <div *ngIf="hasSuccess" class="control control__success">
-            <p>Éxito creando el producto</p>
+            <p>Croqueta eliminada</p>
         </div>
     </form>
 </div>

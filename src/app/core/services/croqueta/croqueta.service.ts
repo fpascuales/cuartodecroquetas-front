@@ -20,10 +20,7 @@ export class CroquetaService {
       map((apiCroquetas: ApiCroquetaI[]) => this.transformCroquetas(apiCroquetas)),
       filter((croquetas: CroquetaI[]) => {
         return croquetas.length > 0;
-      }),
-      //MIRAR OPCIONES PARA TAP
-      // tap((croquetas: CroquetaI[]) => {      
-      // })
+      })
     )
   }
   public getCroquetaById(id: string): Observable<CroquetaI> {
@@ -80,9 +77,7 @@ export class CroquetaService {
     return croquetaTransformed
   }
   private transformCroqueta(apiCroqueta: ApiCroquetaI): CroquetaI {
-    delete apiCroqueta.createAt;   
-    console.log({...apiCroqueta});
-    
+    delete apiCroqueta.createAt;    
     return { ...apiCroqueta }
   }
 }

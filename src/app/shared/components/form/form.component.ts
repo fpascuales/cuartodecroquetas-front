@@ -7,7 +7,7 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CroquetaService } from 'src/app/core/services/croqueta/croqueta.service';
-import { CroquetaI } from 'src/app/core/services/croqueta/models/croqueta.interface';
+import { CroquetaI, CroquetaAllergensType } from 'src/app/core/services/croqueta/models/croqueta.interface';
 import { isNotNegativePrice } from './validators/form-validators';
 
 @Component({
@@ -75,7 +75,8 @@ export class FormComponent implements OnInit {
     const allergenValue = checkbox.value;
     if (checkbox.checked) {
       this.allergenArray.push({ type: allergenValue });
-    } else {
+    }
+    else {
       const index = this.allergenArray.findIndex(
         (a) => a.type === allergenValue
       );
@@ -90,7 +91,17 @@ export class FormComponent implements OnInit {
     const croqueta = this.croquetaForm?.value;
     croqueta.price = parseInt(croqueta.price);
     croqueta.units = parseInt(croqueta.units);
-    this.croquetaService.createCroqueta(this.croquetaForm?.value);
+    this.croquetaService.createCroqueta(this.croquetaForm?.value)
+    .subscribe(
+      response => {
+        console.log('Croqueta creada exitosamente', response);
+        this.hasSuccess = true;
+      },
+      error => {
+        console.error('Error al crear croqueta', error);
+        this.hasFormError = false
+      }
+    )
   }
   private editCroqueta() {
     if (!this.croqueta) {
@@ -99,13 +110,14 @@ export class FormComponent implements OnInit {
     this.croquetaService
       .editCroqueta(this.croquetaForm?.value, this.croqueta._id)
       .subscribe((croqueta) => {
+        this.hasSuccess = true;
         this.router.navigate(['admin/croqueta-list']);
       });
   }
-  private initForm() {
+  private initForm() {    
     const priceExp = new RegExp(/^[\-\.0-9]+$/);
     if (this.croqueta) {
-      this.imgSrc = this.croqueta.image;
+      this.imgSrc = this.croqueta.image;         
     }
     this.croquetaForm = this.formBuilder.group({
       name: new FormControl(this.croqueta?.name || '', [Validators.required]),
@@ -129,5 +141,5 @@ export class FormComponent implements OnInit {
         Validators.required,
       ]),
     });
-  }
+  }  
 }

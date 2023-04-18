@@ -1,19 +1,24 @@
-<form
-    *ngIf="loginForm"
-    [formGroup]="loginForm"
-    (submit)="login()"
+<div
+  class="b-login"
 >
-    <input placeholder="Usuario" formControlName="user">
-    <!-- <div *ngIf="loginForm.get('user')?.invalid && loginForm.get('user')?.touched" style="color: red;">
-        <p *ngIf="loginForm.get('user')?.errors?.['required']">El usuario es requerido</p>
-      </div> -->
-      
-    <input type="password" placeholder="Contraseña" formControlName="password">
-    <!-- <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" style="color: red;">
-        <p *ngIf="loginForm.get('password')?.errors?.['required']">La contraseña es requerida</p>
-      </div> -->
-      
-    <button type="submit">INICIAR SESIÓN</button>
-    <p *ngIf="formError" style="color: red;">{{ formError }}</p>
-</form>
+  <form
+      *ngIf="loginForm"
+      [formGroup]="loginForm"
+      (submit)="login()"
+  >
+      <input placeholder="Usuario" formControlName="user">
+      <!-- <div *ngIf="loginForm.get('user')?.invalid && loginForm.get('user')?.touched" style="color: red;">
+          <p *ngIf="loginForm.get('user')?.errors?.['required']">El usuario es requerido</p>
+        </div> -->
+        
+      <input type="password" placeholder="Contraseña" formControlName="password">
+      <!-- <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" style="color: red;">
+          <p *ngIf="loginForm.get('password')?.errors?.['required']">La contraseña es requerida</p>
+        </div> -->
+        
+      <button type="submit">INICIAR SESIÓN</button>
+      <p *ngIf="formError" style="color: red;">{{ formError }}</p>
+  </form>
+</div>
+
   

@@ -33,6 +33,25 @@ export class OrderService {
       })
     )
   }
+  public getOrderById(id: string): Observable<ApiOrderI> {
+    return this.apiOrderService.getApiOrderById(id).pipe(
+      map((apiOrder: ApiOrderI) => {
+        const order = {
+          _id: apiOrder._id,
+          total: apiOrder.total,
+          date: apiOrder.date,
+          time: apiOrder.time,
+          num: apiOrder.num,
+          orderCroqueta: apiOrder.orderCroqueta.map(orderCroqueta => ({
+            croqueta: orderCroqueta.croqueta,
+            quantity: orderCroqueta.quantity,
+            subtotal: orderCroqueta.subtotal
+          }))
+        };
+        return order;
+      })
+    );
+  }
   public getLastOrder(): Observable<ApiOrderI | null> {
     return this.apiOrderService.getLastApiOrder().pipe(
       map((apiOrder: ApiOrderI) => {

@@ -20,7 +20,8 @@ export class CroquetaListComponent implements OnInit {
     this.activatedRoute.data.subscribe((data) => {
       if (data['croquetaData']) {
         this.croquetas = data['croquetaData'];
-      } else {
+      }
+      else {
         this.getCroquetas();
       }
     });

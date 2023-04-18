@@ -82,6 +82,11 @@ const routes: Routes = [
     }
   },
   {
+    path: 'admin/order-detail/:id',
+    loadChildren: () => import('./pages/admin/order-detail/order-detail.module').then(m => m.OrderDetailModule),
+    canActivate: [AuthGuard]
+  },
+  {
     path: 'admin/login',
     loadChildren: () => import('./pages/admin/login/login.module').then(m => m.LoginModule)
   }

@@ -3,12 +3,23 @@
     <div
         *ngIf="isLogged"
     >
+        <a
+            *ngFor="let link of headerLinksElements"
+            [routerLink]="[link.url]"
+            class="link"
+            routerLinkActive="link--active"
+        >{{ link.content }}</a>
         <button
+            class=""
+            (click)="logout()"
+        >CERRAR SESIÓN</button> 
+    
+    <!-- <button
             (click)="navigateToCroquetasList()"
         >CROQUETAS</button>
         <button
             (click)="navigateToOrderList()"
         >PEDIDOS</button>
-        <button>CERRAR SESIÓN</button>
+        <button>CERRAR SESIÓN</button> -->
     </div>
 </div>
