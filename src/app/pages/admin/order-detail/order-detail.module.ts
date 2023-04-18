@@ -3,13 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { OrderDetailRoutingModule } from './order-detail-routing.module';
 import { OrderDetailComponent } from './order-detail.component';
-import { OrderComponent } from './components/order/order.component';
+import { CroquetaComponent } from './components/croqueta/croqueta.component';
 
 
 @NgModule({
   declarations: [
     OrderDetailComponent,
-    OrderComponent
+    CroquetaComponent
   ],
   imports: [
     CommonModule,

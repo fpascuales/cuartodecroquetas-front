@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs';
-import { OrderCroquetaI } from 'src/app/core/services/order/models/order.interface';
+import { ApiOrderI } from 'src/app/core/services/order/models/order.interface';
 import { OrderService } from 'src/app/core/services/order/order.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { OrderService } from 'src/app/core/services/order/order.service';
   styleUrls: ['./order-detail.component.scss']
 })
 export class OrderDetailComponent {
-  public order?: OrderCroquetaI[]
+  public order?: ApiOrderI
   constructor(
     private activatedRoute: ActivatedRoute,
     private orderService: OrderService,
@@ -19,10 +19,10 @@ export class OrderDetailComponent {
     this.activatedRoute.params
     .pipe(
       switchMap((params) =>
-      this.orderService.getOrderById(params['id']))
-    )
-    .subscribe()
-    
+      this.orderService.getOrderById(params['id']))      
+    ).subscribe((data) => {
+      this.order = data;
+      }
+    )      
   }
-
 }

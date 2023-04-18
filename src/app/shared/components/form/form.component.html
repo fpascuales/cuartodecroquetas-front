@@ -77,7 +77,7 @@
                 " class="control control__error">
             <p *ngIf="croquetaForm.get('units')?.errors?.['required']">El campo UNIDADES está requerido</p>
             <p *ngIf="croquetaForm.get('units')?.errors?.['negativePrice']">No se pueden introducir UNIDADES negativas</p>
-            <p *ngIf="croquetaForm.get('price')?.errors?.['pattern']">Solo se admiten números</p>
+            <p *ngIf="croquetaForm.get('units')?.errors?.['pattern']">Solo se admiten números</p>
         </div>
         <div *ngIf="
                     !croquetaForm.get('price')?.valid

@@ -1,5 +1,19 @@
-<p>order-detail works!</p>
-<app-order
-    *ngFor="let ord of order"
-    [ord]="ord"
-></app-order>
+<div
+    *ngIf="order"
+    class="b-order-detail"
+>
+    <div class="b-order-list">
+        <div class="b-order-list__info">
+            <h3>DETALLES DEL PEDIDO</h3>
+            <div class="b-order-list__info--date">
+                <p>FECHA: {{ order.date }}</p>
+                <p>HORA: {{ order.time }}</p>
+            </div>
+        </div>
+        <!-- <app-croqueta
+            *ngFor="let croqueta of order.orderCroqueta"
+            [croqueta]="croqueta"
+        ></app-croqueta> -->
+    </div>
+</div>
+
