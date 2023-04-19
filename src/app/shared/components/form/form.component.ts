@@ -1,13 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CroquetaService } from 'src/app/core/services/croqueta/croqueta.service';
-import { CroquetaI, CroquetaAllergensType } from 'src/app/core/services/croqueta/models/croqueta.interface';
+import { CroquetaI } from 'src/app/core/services/croqueta/models/croqueta.interface';
 import { isNotNegativePrice } from './validators/form-validators';
 
 @Component({
@@ -67,9 +62,6 @@ export class FormComponent implements OnInit {
   public navigateToCroquetaList() {
     this.router.navigate(['admin/croqueta-list']);
   }
-  public onFileChange(event: string) {}
-  //buscar el tipo de event y meter el patchValue llamar a croquetaService
-
   public updateAllergen(event: Event) {
     const checkbox = event.target as HTMLInputElement;
     const allergenValue = checkbox.value;

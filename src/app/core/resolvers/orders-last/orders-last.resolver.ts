@@ -4,7 +4,7 @@ import {
   RouterStateSnapshot,
   ActivatedRouteSnapshot
 } from '@angular/router';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { ApiOrderI } from '../../services/order/models/order.interface';
 import { ApiOrderService } from '../../services/order/api/api-order.service';
 

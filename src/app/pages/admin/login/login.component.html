@@ -1,5 +1,9 @@
 <div class="b-login">
-  <form *ngIf="loginForm" class="b-form" [formGroup]="loginForm" (submit)="login()">
+  <form
+    *ngIf="loginForm"
+    class="b-form"
+    [formGroup]="loginForm"
+    (submit)="login()">
     <h2 class="b-form__title">Área de Gestión</h2>
     <div class="b-form__login">
       <input class="b-form__input" placeholder="Usuario" formControlName="user">

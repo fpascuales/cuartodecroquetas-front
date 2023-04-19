@@ -4,7 +4,7 @@ import {
   RouterStateSnapshot,
   ActivatedRouteSnapshot
 } from '@angular/router';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { CroquetaService } from '../../services/croqueta/croqueta.service';
 import { CroquetaI } from '../../services/croqueta/models/croqueta.interface';
 

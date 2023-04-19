@@ -1,4 +1,4 @@
-import { Observable, map, filter, tap, switchMap, forkJoin } from 'rxjs';
+import { Observable, map, filter, switchMap, forkJoin } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { ApiCroquetaService } from './api/api-croqueta.service';
 import { ApiCroquetaI, CroquetaI, CroquetaRequestBody, CroquetaTopI } from './models/croqueta.interface';
@@ -72,7 +72,6 @@ export class CroquetaService {
       )
     )
   }
-  //Meter una public uploadImage data.append meter el return con un post la url de cloudinary y el data
   private transformCroquetas(apiCroquetas: ApiCroquetaI[]): CroquetaI[] {
     const croquetaTransformed = apiCroquetas.map((croqueta) => this.transformCroqueta(croqueta));
     return croquetaTransformed

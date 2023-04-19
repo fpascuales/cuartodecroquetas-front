@@ -3,17 +3,26 @@
     class="b-order-detail"
 >
     <div class="b-order-list">
-        <div class="b-order-list__info">
+        <div class="b-order-list__info b-order-list__info--up">
             <h3>DETALLES DEL PEDIDO</h3>
             <div class="b-order-list__info--date">
                 <p>FECHA: {{ order.date }}</p>
                 <p>HORA: {{ order.time }}</p>
             </div>
         </div>
-        <!-- <app-croqueta
+        <app-croqueta
             *ngFor="let croqueta of order.orderCroqueta"
             [croqueta]="croqueta"
-        ></app-croqueta> -->
+        ></app-croqueta>
+        <div class="b-order-list__info b-order-list__info--down">
+            <h3>TOTAL: {{ order.total }} €</h3>
+        </div>
     </div>
+    <button
+        [routerLink]="['/admin/order-list']"
+        class="b-order-list__btn-back"
+    >
+    <span class="icon icon-arrow-left"></span>
+    </button>
 </div>
 

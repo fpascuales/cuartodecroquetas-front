@@ -1,17 +1,17 @@
-<!-- <div
-    *ngIf="croqueta"
+<div
+    *ngIf="croqueta && croquetaDetail"
     class="b-croqueta"
 >
     <img
     class="b-croqueta__image"
-    [src]="croqueta.croqueta.image"
+    [src]="croquetaDetail.image"
     >
     <div class="b-croqueta__info b-croqueta__info--one">
-        <p>{{ order.croqueta.name }}</p>
-        <p>{{ order.croqueta.price }} €</p>
+        <p>{{ croquetaDetail.name }}</p>
+        <p>{{ croquetaDetail.price }} €</p>
     </div>
     <div class="b-croqueta__info">
-        <p>{{ order.quantity }} Ud.</p>
-        <p>{{ order.subtotal }} €</p>
+        <p>{{ croqueta.quantity }} Ud.</p>
+        <p>{{ croqueta.subtotal }} €</p>
     </div>
-</div> -->
+</div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth/auth.service';
-import { ActivatedRoute, ChildActivationEnd, Router } from '@angular/router';
+import { ChildActivationEnd, Router } from '@angular/router';
 import { HeaderLink } from './model/header.model';
 import { headerLinks } from './config/header.config';
 
@@ -17,7 +17,6 @@ export class HeaderComponent{
 
   constructor(
     private authService: AuthService,
-    private activatedRoute: ActivatedRoute,
     private router: Router
   ){
     this.router.events.subscribe((event) => {

@@ -8,16 +8,18 @@ import { ApiOrderCroquetaI } from 'src/app/core/services/order/models/order.inte
   templateUrl: './croqueta.component.html',
   styleUrls: ['./croqueta.component.scss']
 })
-export class CroquetaComponent {
-  // public croquetaDetail: CroquetaI = ''
-  // constructor(
-  //   private croquetaService: CroquetaService
-  // ){}
-  // @Input() public croqueta?: ApiOrderCroquetaI
+export class CroquetaComponent implements OnInit{
+  public croquetaDetail?: CroquetaI
+  constructor(
+    private croquetaService: CroquetaService
+  ){}
+  @Input() public croqueta?: ApiOrderCroquetaI
 
-  // public ngOnInit(): void {
-  //   this.croquetaService.getCroquetaById(this.croqueta?.croqueta).subscribe((data) => {
-  //     this.croqueta = data;
-  //   })
-  // }
+  public ngOnInit(): void {
+    if(this.croqueta && this.croqueta.croqueta){
+      this.croquetaService.getCroquetaById(this.croqueta?.croqueta).subscribe((data) => {
+        this.croquetaDetail = data;   
+      })
+    }
+  }
 }

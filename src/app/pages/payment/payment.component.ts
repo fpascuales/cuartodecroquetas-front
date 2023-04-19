@@ -14,10 +14,7 @@ export class PaymentComponent implements OnInit{
   constructor(
     private orderService: OrderService,
     private router: Router
-  ){
-
-    
-  }
+  ){}
 
   public ngOnInit(): void {
     this.orderService.getLastOrder().subscribe((order) => {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { ApiOrderI } from 'src/app/core/services/order/models/order.interface';
 import { OrderService } from 'src/app/core/services/order/order.service';
 
@@ -13,8 +13,7 @@ export class OrderListComponent implements OnInit {
 
   constructor(
     private ordersService: OrderService,
-    private activatedRoute: ActivatedRoute,
-    private router: Router
+    private activatedRoute: ActivatedRoute
   ){}
   public ngOnInit(): void {
     this.activatedRoute.data.subscribe((data) => {

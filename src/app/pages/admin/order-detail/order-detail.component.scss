@@ -20,11 +20,37 @@
         flex-direction: column;
         background-color: var(--color-dark);
         color: var(--color);
-        border-radius: 5px 5px 0 0;
         &--date{
             display: flex;
             justify-content: space-around;
             width: 100%;
         }
+        &--up{
+            border-radius: 5px 5px 0 0;
+        }
+        &--down{
+            border-radius: 0 0 5px 5px;
+        }
+    }
+    &__btn-back{
+        margin-top: 20px;
+        font-size: 20px;     
+        color: var(--color);
+        height: 50px;
+        width: 50px;
+        background: var(--color-add);
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: background-color .25s ease-in-out;
+        &:hover{
+            background-color: var(--color-info);
+        }
+    }
+}
+@media only screen and (max-width: 600px) {
+    .b-order-list{
+        font-size: 16px;
+        width: 95%;
     }
 }

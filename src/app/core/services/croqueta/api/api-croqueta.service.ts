@@ -28,5 +28,5 @@ export class ApiCroquetaService {
   }
   public deleteApiCroqueta(id: string): Observable<ApiCroquetaI> {
     return this.http.delete<ApiCroquetaI>(`${API_URL}/croquetas/${id}`)
-  }  
+  }
 }

@@ -8,7 +8,6 @@ import { UserSignInResponseI } from './models/auth.model';
 const AUTH_URL = 'https://cuartodecroquetas-back.vercel.app/admin'
 const TOKEN_KEY = 'jwt-auth-token'
 
-
 @Injectable({
   providedIn: 'root'
 })

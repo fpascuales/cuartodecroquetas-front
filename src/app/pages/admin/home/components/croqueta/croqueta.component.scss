@@ -35,3 +35,11 @@
 .icon{
     margin-right: 5px;
 }
+@media only screen and (max-width: 600px) {
+    .b-croqueta__image{
+        width: 60px;
+    }
+    .b-croqueta__btn{
+        display: none;
+    }
+}

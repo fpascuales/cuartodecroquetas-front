@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CroquetasDataResolver } from './core/resolvers/croquetas-data/croquetas-data.resolver';
 import { OrdersLastResolver } from './core/resolvers/orders-last/orders-last.resolver';
-import { PaymentGuard } from './core/guards/payment/payment.guard';
 import { AuthGuard } from './core/guards/auth/auth.guard';
 import { OrdersLastTenResolver } from './core/resolvers/orders-last-ten/orders-last-ten.resolver';
 import { TopCroquetasDataResolver } from './core/resolvers/top-croquetas-data/top-croquetas-data.resolver';
