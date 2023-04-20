@@ -26,7 +26,7 @@ export class CroquetaComponent{
   }
   public addToOrder(){
     if(this.croqueta && this.quantity){
-      if(this.quantity > 0){
+      if(this.quantity > 1){
       const orderCroqueta: OrderCroquetaI = {
         croqueta: this.croqueta,
         quantity: this.quantity,
